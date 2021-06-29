@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Naman's Munji</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+    section {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+    .page1 > h1 {
+      font-size: 48px;
+      margin-top: 30%;
+      letter-spacing: 0px;
+    }
+    .img1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(0, 0);
+      width: 100%;
+      height: 100%;
+      z-index: -5;
+    }
+
+    h1,
+    h3 {
+      color: coral;
+    }
+    h3 {
+      font-size: 32px;
+    }
+    a {
+      text-decoration: none;
+      font-size: 24px;
+      z-index: 10;
+      height: 30%;
+      color: coral;
+    }
+    .god {
+      height: 40vh;
+      width: 40vw;
+      max-width: 300px;
+      border: 10px solid rgb(224, 176, 53);
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1);
+      transition: all 1s ease;
+    }
+
+    @media screen and (max-width: 700px) {
+      h3,
+      h1 {
+        font-size: 36px;
+        margin-top: 40px;
+      }
+      .god {
+        height: 30vh;
+        width: 30vw;
+        margin: 10px;
+      }
+    }
+    .page1 {
+      display: flex;
+      flex-direction: column;
+    }
+    .page2 {
+      border: solid 10px goldenrod;
+      border-radius: 10%;
+      display: flex;
+      flex-direction: center;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: absolute;
+      top: 250%;
+      left: 0%;
+      height: 100%;
+      width: 100%;
+      text-align: center;
+      transform: translate(0%, -150%) scale(0.9);
+    }
+    span {
+      color: black;
+      font-size: 32px;
+    }
+  </style>
+  <body>
+    <img src="./Screenshot from 2021-06-27 14-38-03.png" class="img1" alt="" />
+    <section>
+      <div class="page1">
+        <h1>ವೇಣುಗೋಪಾಲ ಸ್ವಾಮಿ ಪ್ರಸನ್ನ</h1>
+        <img
+          src="./Screenshot from 2021-06-27 14-30-12.png"
+          class="god"
+          alt=""
+        />
+      </div>
+      <div class="page2">
+        <h3>
+          We cordially invite you to the Upanayana of <br />Chi. B.H.Naman
+          Vasista <br />on sunday 4th July 2021 @ 09:30 AM
+        </h3>
+        <a
+          href="https://goo.gl/maps/67omndpn7RKW4i856"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Location: Sri Srinivasa Nilaya Dharmika Sabha Mandira <br />
+          Opposite To Swamy Vivekanada Park Girinagar,<br />
+          Near Seetha Circle Bengaluru <span>Click</span></a
+        >
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.5126087689464!2d77.54801320000001!3d12.939016800000008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3e3cf968b151%3A0xa4e9e09de208b14c!2sSri%20Srinivasa%20Nilaya%20Dharmika%20Sabha%20Mandira!5e0!3m2!1sen!2sin!4v1624789027739!5m2!1sen!2sin"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
+    </section>
+    <script>
+      const span = document.querySelector('span');
+      const page2 = document.querySelector('.page2');
+      //functions
+      let interval;
+      //console.log('working');
+      function randomColor() {
+        const randomNumber = Math.floor(Math.random() * 255 + 1);
+        const randomNumber2 = Math.floor(Math.random() * 255 + 1);
+        const randomNumber3 = Math.floor(Math.random() * 255 + 1);
+        span.style.color = `rgb(${
+          randomNumber + 10
+        },${randomNumber2},${randomNumber3})`;
+        page2.style.borderColor = `rgb(${
+          randomNumber + 10
+        },${randomNumber2},${randomNumber3})`;
+        interval = setInterval(() => {
+          randomColor();
+        }, 1000);
+        setTimeout(() => {
+          clearInterval(interval);
+        }, 1000);
+      }
+      //there was a problem with the code that setInterval was getting called more than what it should've been
+      //so clear of the interval BOOM!
+      randomColor(); //then why the
+    </script>
+  </body>
+</html>
